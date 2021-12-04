@@ -9,12 +9,12 @@ import (
 )
 
 func main() {
-	fmt.Println("task1 answer: ", task1("input.txt"))
-	fmt.Println("task2 answer: ", task2("input.txt"))
+	fmt.Println("task1 answer: ", task1())
+	fmt.Println("task2 answer: ", task2())
 }
 
-func task1(fileName string) int {
-	file := openFile(fileName)
+func task1() int {
+	file := openFile()
 	forward := 0
 	depth := 0
 
@@ -38,8 +38,8 @@ func task1(fileName string) int {
 	return forward * depth
 }
 
-func task2(fileName string) int {
-	file := openFile(fileName)
+func task2() int {
+	file := openFile()
 	forward := 0
 	depth := 0
 	aim := 0
@@ -71,8 +71,8 @@ func check(e error) {
 	}
 }
 
-func openFile(fileName string) *os.File {
-	f, err := os.Open(fileName)
+func openFile() *os.File {
+	f, err := os.Open("input.txt")
 	check(err)
 	return f
 }
