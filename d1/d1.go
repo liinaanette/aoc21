@@ -76,7 +76,7 @@ func sum(array []int) int {
 }
 
 func openFile(fileName string) *os.File {
-	f, err := os.Open("input1.txt")
+	f, err := os.Open(fileName)
 	check(err)
 	return f
 }
